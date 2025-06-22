@@ -1,36 +1,39 @@
-
 import React from 'react';
 import { Code, ExternalLink, Github, Star } from 'lucide-react';
 
-export const ProjectsApp = () => {
+export default function ProjectsApp() {
   const projects = [
     {
-      name: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with React, Node.js, and Stripe integration',
-      tech: ['React', 'Node.js', 'express.js', 'MongoDB', 'Stripe'],
+      name: 'Freshstart AI',
+      description: 'Built a SaaS platform delivering AI-powered resume optimization with 80%+ ATS score targets. Integrated LinkedIn headline & About-section optimizers to boost recruiter visibility.and Developed edit suggestions and PDF export workflows for user-customized resumes. Implemented Transparency Mode to explain keyword choices and editing rationale. Added ATS score comparison, keyword insights, and skill-gap analysis dashboards',
+      tech: ['React.js', 'postgreSQL', 'Tailwind CSS', 'Shadcn UI','Gemini API','Node.js', 'Express.js'],
       status: 'Completed',
-      stars: 1
+      githubUrl: 'https://github.com/Garvit1000/freshstartAI',
+      liveUrl: 'https://freshstartai-1.onrender.com/'
     },
     {
-      name: 'Task Management App',
-      description: 'Real-time collaborative task management with drag-and-drop functionality',
-      tech: ['Next.js', 'Socket.io', 'MongoDB'],
-      status: 'In Progress',
-      stars: 28
+      name: 'Flexhunt',
+      description: ' Developed a job platform with skill-based matchmaking and recruiter management tools. Built seller dashboard with PayPal payment integration and real-time transaction logging. Created a community forum module for discussions and professional networking',
+      tech: ['React.js', 'Paypal', 'firebase', 'Tailwind CSS', 'Shadcn UI'],
+      status: 'Completed',
+      githubUrl: 'https://github.com/Garvit1000/flexhunt',
+      liveUrl: 'https://www.flexhunt.co/'
     },
     {
-      name: 'Weather Dashboard',
-      description: 'Beautiful weather dashboard with charts and forecasts',
-      tech: ['Vue.js', 'Chart.js', 'OpenWeather API'],
+      name: 'Mindflow',
+      description: 'AI Chat Assistant: Engage in conversations with  AI assistant, designed to provide empathetic support and assess your mental health. Personalized Diet Plans: Discover diet plans tailored to your BMI and mental state, helping you nourish both your body and mind. Soothing Music: Relax and unwind with a curated selection of calming music. Profile Management: Keep your information up-to-date and personalize your experience. Location Services: Track your frequent locations to provide personalized insights and recommendations.',
+      tech: ['ReactNative', 'Expo', 'EASbuild', 'firebase'],
       status: 'Completed',
-      stars: 15
+      githubUrl: 'https://github.com/Garvit1000/mindflow',
+      liveUrl: ''
     },
     {
-      name: 'Blog CMS',
-      description: 'Content management system with markdown support and SEO optimization',
-      tech: ['Gatsby', 'GraphQL', 'Netlify CMS'],
+      name: 'create-vite-shadcn-app',
+      description: 'A CLI tool to quickly scaffold a React application with Vite, Tailwind CSS, and shadcn/ui components. Get started with a fully configured development environment in seconds.',
+      tech: ['React.js', 'Vite', 'Tailwind CSS', 'Shadcn UI'],
       status: 'Completed',
-      stars: 33
+      githubUrl: 'https://github.com/Garvit1000/create-vite-shadcn-app',
+      liveUrl: 'https://www.npmjs.com/package/create-vite-shadcn-app'
     }
   ];
 
@@ -53,10 +56,7 @@ export const ProjectsApp = () => {
                   <h3 className="text-xl font-semibold text-white mb-2">{project.name}</h3>
                   <p className="text-gray-300 mb-4">{project.description}</p>
                 </div>
-                <div className="flex items-center space-x-2 text-sm">
-                  <Star className="w-4 h-4 text-yellow-400" />
-                  <span className="text-gray-400">{project.stars}</span>
-                </div>
+                
               </div>
 
               <div className="flex items-center justify-between">
@@ -79,14 +79,24 @@ export const ProjectsApp = () => {
                   }`}>
                     {project.status}
                   </span>
-                  <button className="flex items-center space-x-1 text-blue-400 hover:text-blue-300">
+                  <a 
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 text-blue-400 hover:text-blue-300 transition-colors"
+                  >
                     <Github className="w-4 h-4" />
                     <span className="text-sm">Code</span>
-                  </button>
-                  <button className="flex items-center space-x-1 text-blue-400 hover:text-blue-300">
+                  </a>
+                  <a 
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 text-blue-400 hover:text-blue-300 transition-colors"
+                  >
                     <ExternalLink className="w-4 h-4" />
                     <span className="text-sm">Demo</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -95,4 +105,4 @@ export const ProjectsApp = () => {
       </div>
     </div>
   );
-};
+}

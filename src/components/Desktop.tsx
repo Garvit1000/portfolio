@@ -5,7 +5,7 @@ import { Taskbar } from './Taskbar';
 import { FileManager } from './FileManager';
 import { Terminal } from './Terminal';
 import { AboutApp } from './AboutApp';
-import { ProjectsApp } from './ProjectsApp';
+import  ProjectsApp  from './ProjectsApp';
 import { ContactApp } from './ContactApp';
 import { ContextMenu } from './ContextMenu';
 import { NotificationSystem } from './NotificationSystem';
